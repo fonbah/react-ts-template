@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import { UserContext } from '../context';
 
 const styles = {
     primary: {
@@ -19,9 +20,12 @@ interface IPropTypes {
 
 const Component4: FC<IPropTypes> = ({ type }: IPropTypes) => {
 
+    const useAuth = () => useContext(UserContext);
+    const loggedIn = useAuth();
+
     return (
         <button style={styles[type]} type={'button'}>
-            ClickMe
+            {loggedIn ? 'Войти' : 'Выйти'}
         </button>
     )
 };
