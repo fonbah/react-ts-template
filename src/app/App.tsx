@@ -1,15 +1,26 @@
 import React, { FC } from 'react';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
 
-import Component from './components/Component';
-import Component2 from './components/Component2';
-import Component4 from './components/Component4';
+import { initStore } from '../init/store';
+import { Router } from './router';
+import { theme } from './theme';
 
-const App: FC = () => (
-    <>
-        <Component content={'Component text!'} />
-        <Component2 title={'Component2 title!'} onClick={() => null} extends={{ className: 'comp', tabIndex: 1 }} >child</Component2>
-        <Component4 type={'success'} />
-    </>
+const initState = {};
+
+const store = initStore(initState);
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
+
+export const App: FC = () => (
+    <Provider store={store}>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Router />
+        </ThemeProvider>
+    </Provider>
 );
-
-export default App;
