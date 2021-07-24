@@ -1,1 +1,1 @@
-# React Redux MUI TS template#
+# React Redux MUI TS template
