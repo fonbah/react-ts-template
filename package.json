@@ -1,10 +1,9 @@
 {
   "name": "template",
   "version": "0.1.0",
-  "licence": "MIT",
-  "private": false,
+  "license": "MIT",
   "scripts": {
-    "start": "node config/webpack.dev.js",
+    "start": "webpack serve --config config/webpack.dev.js --open",
     "build": "webpack --config config/webpack.prod.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:staged": "lint-staged",
