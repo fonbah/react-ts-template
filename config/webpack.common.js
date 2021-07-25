@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../dist/public'),
-        filename: '[name].[contenthash].js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -48,6 +48,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'dist/template.html',
+            //favicon: 'dist/favicon.ico',
             title: 'React TS template',
         }),
     ]

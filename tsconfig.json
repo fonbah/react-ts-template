@@ -20,7 +20,13 @@
     "jsx": "react-jsx",
     "sourceMap": true
   },
+  "types": [
+    "@types/webpack-env",
+    "@types/node"
+  ],
   "include": [
-    "src"
+    "src",
+    "custom.d.ts",
+    "fonts.d.ts",
   ]
 }

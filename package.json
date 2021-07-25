@@ -7,7 +7,9 @@
     "start": "webpack serve --config config/webpack.dev.js --open",
     "build": "webpack --config config/webpack.prod.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:staged": "lint-staged",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
@@ -30,6 +32,8 @@
     "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.28.0",
     "eslint-plugin-import": "^2.23.4",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
     "ts-loader": "^9.2.2",
     "typescript": "^4.3.2",
     "webpack-dev-server": "^3.11.2"
